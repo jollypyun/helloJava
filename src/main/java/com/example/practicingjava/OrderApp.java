@@ -10,12 +10,15 @@ import com.example.order.OrderServiceImpl;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberservice = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
+//        MemberService memberservice = new MemberServiceImpl();
+//        OrderService orderService = new OrderServiceImpl(discountPolicy, memberRepository);
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
-        memberservice.join(member);
+        memberService.join(member);
 
         Order order = orderService.createOrder(memberId, "itemA", 10000);
         System.out.println("order = " + order);
