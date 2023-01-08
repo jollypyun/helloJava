@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class PracticingJavaApplicationTests {
 
     @Test
-    void contextLoads() {
+    void emp() {
+
     }
 
 }
